@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wuM-3p-fzB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="MEE-4s-mst">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="55" id="MEE-4s-mst" customClass="CategoryCell" customModule="PerryToDoListDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MEE-4s-mst" id="gkt-Sn-PU9">
@@ -34,7 +34,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-iD-hMD">
                                                     <rect key="frame" x="15" y="5" width="297" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -63,19 +63,31 @@
                                                 <constraint firstAttribute="trailing" secondItem="avM-nd-bl7" secondAttribute="trailing" constant="15" id="mOR-hn-X9C"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="avM-nd-bl7" id="h9P-8P-Mx4"/>
+                                            <outlet property="countLabel" destination="0QY-tl-ZWI" id="PQi-fy-175"/>
+                                            <outlet property="nameLabel" destination="Tf7-iD-hMD" id="jGh-qb-rya"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1fC-8T-kJE" id="KLd-r9-AGj"/>
+                                    <outlet property="delegate" destination="1fC-8T-kJE" id="yh0-JR-Hml"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kuf-fr-UGe" firstAttribute="top" secondItem="wuM-3p-fzB" secondAttribute="bottom" id="CUT-g1-0Zv"/>
-                            <constraint firstItem="wuM-3p-fzB" firstAttribute="top" secondItem="1Qo-nO-Ipg" secondAttribute="bottom" id="GKd-sy-XLe"/>
+                            <constraint firstItem="wuM-3p-fzB" firstAttribute="top" secondItem="1Qo-nO-Ipg" secondAttribute="bottom" constant="-64" id="GKd-sy-XLe"/>
                             <constraint firstAttribute="trailing" secondItem="wuM-3p-fzB" secondAttribute="trailing" id="RNh-CY-dJI"/>
                             <constraint firstItem="wuM-3p-fzB" firstAttribute="leading" secondItem="VL2-eQ-oYj" secondAttribute="leading" id="qDz-NN-aJ2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r0C-Qj-2d1"/>
+                    <connections>
+                        <outlet property="contentTableView" destination="wuM-3p-fzB" id="Cr7-nU-gW1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L19-Rt-Wkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

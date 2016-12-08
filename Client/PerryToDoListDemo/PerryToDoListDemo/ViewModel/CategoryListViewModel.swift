@@ -22,7 +22,7 @@ class CategoryListViewModel: NSObject {
         
     }
     
-    func getContentForRow(index: Int) -> CategoryModel {
+    func getContentForRow(index: Int) -> CategoryModel? {
         return self.categoryList[index]
     }
 }

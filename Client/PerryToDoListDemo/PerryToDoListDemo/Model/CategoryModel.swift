@@ -12,7 +12,7 @@ class CategoryModel: Mappable {
     var categoryId: String?
     var title: String?
     var content: String?
-    var counts: Int?
+    var counts: Int
     
     required init?(map: Map) {
         self.categoryId = ""

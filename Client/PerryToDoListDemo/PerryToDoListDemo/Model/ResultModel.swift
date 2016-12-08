@@ -10,12 +10,16 @@ import Foundation
 import ObjectMapper
 class ResultModel<T: Mappable>: Mappable {
     var resultArray: [T]?
-    
+    var resultObject: T?
     required init?(map: Map){
         
     }
     
     func mapping(map: Map) {
-        resultArray <- map["data"]
+        if (map["data"].currentValue as AnyObject).isKind(of: NSArray.self) {
+            resultArray <- map["data"]
+        } else {
+            resultObject <- map["data"]
+        }
     }
 }
