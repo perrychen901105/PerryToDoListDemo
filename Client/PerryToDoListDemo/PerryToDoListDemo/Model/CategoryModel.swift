@@ -28,3 +28,9 @@ class CategoryModel: Mappable {
         self.counts <- (map["counts"], transfromOfIntAndString())
     }
 }
+
+extension CategoryModel: CustomStringConvertible {
+    var description: String {
+        return "\(self.categoryId), \(self.title), \(self.content), \(self.counts)"
+    }
+}

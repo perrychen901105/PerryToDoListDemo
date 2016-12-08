@@ -36,3 +36,11 @@ class RequestTodoListByCategoryModel: Mappable {
         self.categoryId <- map["category"]
     }
 }
+
+
+extension RequestTodoListByCategoryModel: CustomStringConvertible
+{
+    var description: String {
+        return "\(self.categoryId)"
+    }
+}
