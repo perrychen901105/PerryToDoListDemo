@@ -13,6 +13,7 @@ import ObjectMapper
 class CategoryListViewModel: NSObject {
     var dataRequest: DataRequest?
     var categoryList: [CategoryModel] = [CategoryModel]()
+    var testAppList: [TestAppModel] = [TestAppModel]()
     
     func categoryNums() -> Int {
         return self.categoryList.count
@@ -38,6 +39,25 @@ extension CategoryListViewModel: BaseViewModelProtocol {
                     if let strongSelf = self {
                         strongSelf.categoryList = modelArr
                         print(strongSelf.categoryList)
+                        success()
+                        return
+                    }
+                }
+            }
+            failure("sorry failed")
+        })
+    }
+    
+    func getTestAppRespon(_ parameters: Mappable, success: @escaping ()->Void, failure:@escaping (_ str: String) -> Void) {
+        let URL = HttpAssist.getRequestURL(.Temp)
+        
+        self.dataRequest = requestData(url: URL(), parameters: parameters.toJSON() as [String : AnyObject], methods: HTTPMethod.get, responseBlock: {[weak self] (result) in
+            if result.success {
+                let resultModel: ResultModel? = Mapper<ResultModel<TestAppModel>>().map(JSONString: result.resultString)
+                if let modelArr = resultModel?.resultArray {
+                    if let strongSelf = self {
+                        strongSelf.testAppList = modelArr
+                        print(strongSelf.testAppList)
                         success()
                         return
                     }

@@ -21,6 +21,7 @@
 		D805B3E51DF853440054B35B /* TodoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D805B3E41DF853440054B35B /* TodoList.storyboard */; };
 		D805B3E71DF853520054B35B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D805B3E61DF853520054B35B /* Settings.storyboard */; };
 		D805B3EA1DF859200054B35B /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805B3E91DF859200054B35B /* CategoryCell.swift */; };
+		D82DC16F1E1F2DE600FC9854 /* TestAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82DC16E1E1F2DE600FC9854 /* TestAppModel.swift */; };
 		D84A48B31DF55D9C00F381B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A48B21DF55D9C00F381B1 /* AppDelegate.swift */; };
 		D84A48B81DF55D9C00F381B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84A48B61DF55D9C00F381B1 /* Main.storyboard */; };
 		D84A48BA1DF55D9C00F381B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84A48B91DF55D9C00F381B1 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		D805B3E41DF853440054B35B /* TodoList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoList.storyboard; sourceTree = "<group>"; };
 		D805B3E61DF853520054B35B /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D805B3E91DF859200054B35B /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		D82DC16E1E1F2DE600FC9854 /* TestAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAppModel.swift; sourceTree = "<group>"; };
 		D84A48AF1DF55D9C00F381B1 /* PerryToDoListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerryToDoListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84A48B21DF55D9C00F381B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D84A48B71DF55D9C00F381B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D805B3DA1DF83CA70054B35B /* RequestModel.swift */,
 				D805B3DC1DF83E050054B35B /* CategoryModel.swift */,
 				D805B3DE1DF840C90054B35B /* ResultModel.swift */,
+				D82DC16E1E1F2DE600FC9854 /* TestAppModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				D84A48AD1DF55D9C00F381B1 /* Resources */,
 				34D53570736378D06C580E25 /* [CP] Embed Pods Frameworks */,
 				2BFEFB3B023B11D1BE033952 /* [CP] Copy Pods Resources */,
+				D805B4021DFAA0550054B35B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -507,6 +511,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D805B4021DFAA0550054B35B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"hello world\"";
+		};
 		E7EC921D3ABDF09B176D441B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82DC16F1E1F2DE600FC9854 /* TestAppModel.swift in Sources */,
 				D805B3E11DF8435D0054B35B /* CategoryListViewController.swift in Sources */,
 				D805B3DB1DF83CA70054B35B /* RequestModel.swift in Sources */,
 				D805B3DD1DF83E050054B35B /* CategoryModel.swift in Sources */,

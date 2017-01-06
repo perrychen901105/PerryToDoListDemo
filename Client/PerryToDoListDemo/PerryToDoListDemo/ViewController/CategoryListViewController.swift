@@ -24,6 +24,12 @@ class CategoryListViewController: UIViewController {
         }, failure: { (str: String) in
         
         })
+        
+        self.categoryViewModel.getTestAppRespon(viewModelRequest, success: { 
+            
+        }) { (str: String) in
+            
+        }
         // Do any additional setup after loading the view.
     }
 

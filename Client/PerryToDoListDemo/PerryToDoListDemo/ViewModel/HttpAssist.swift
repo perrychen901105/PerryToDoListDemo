@@ -10,10 +10,11 @@ import Foundation
 private enum HTTPDomain: String {
     case BaseURL = "http://localhost:8888/todolist/"
     case TestURL = "http://localhost:8888/respon.json"
+    case TempURL = "https://pwcpower.herokuapp.com/api/apps"
 }
 
 enum HttpAssist: String {
-    case FetchCategoryList,ReportHC,ReportYTDH,ReportMA,ReportYTDA,ReportLOSPIE,ReportLOS, Original, Test
+    case FetchCategoryList,ReportHC,ReportYTDH,ReportMA,ReportYTDA,ReportLOSPIE,ReportLOS, Original, Test, Temp
     
     fileprivate func combineString(str: String) -> String {
         return HTTPDomain.BaseURL.rawValue + str
@@ -39,6 +40,8 @@ enum HttpAssist: String {
             return combineString(str: "")
         case .Test:
             return HTTPDomain.TestURL.rawValue
+        case .Temp:
+            return HTTPDomain.TempURL.rawValue
         }
     }
 }
